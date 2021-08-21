@@ -1,0 +1,27 @@
+{
+    "cmake.configureOnOpen": true,
+    "terminal.integrated.defaultProfile.linux": "zsh",
+    "explorer.confirmDelete": false,
+    "rust-analyzer.inlayHints.parameterHints": false,
+    "terminal.integrated.profiles.linux": {
+        "bash": {
+            "path": "bash",
+        },
+        "zsh": {
+            "path": "zsh"
+        },
+        "fish": {
+            "path": "fish"
+        },
+        "tmux": {
+            "path": "tmux",
+            "icon": "terminal-tmux"
+        },
+        "pwsh": {
+            "path": "pwsh",
+            "icon": "terminal-powershell"
+        }
+    },
+    "editor.formatOnSave": true,
+    "typescript.updateImportsOnFileMove.enabled": "always"
+}
