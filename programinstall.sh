@@ -6,7 +6,7 @@ set -e # exit on error maybe change this later
 # for other distributions
 
 sudo pacman -S curl --needed # for installing things duh
-sudo pacman -S coreutils --needed && pacman -Rs nano # install basic gnu dev tools, and remove nano because it's the worst editor on planet earth
+sudo pacman -S coreutils --needed 
 # i'm not really a big fan of coreutils but I believe it's necessary for the ln command. if you don't want it you can just uninstall it afterwards with the command sudo pacman -Rs coreutils
 
 # install zsh and oh-my-zsh 
@@ -38,3 +38,9 @@ pacman -Q neofetch && sudo ln -S /bin/neofetch /bin/flashfetch # this is just so
 
 # install ninja if you have cmake installed
 pacman -Q cmake && pacman -S ninja --needed 
+
+# remove nano because it's a horrible text editor and you're better off just using whatever graphical notepad comes preinstalled with your version of manjaro (or of course using neovim)
+pacman -Q manjaro && sudo pacman -Rs nano 
+
+# remove gimp because literally no one has ever though "yeah let me open up gimp real quick"
+# pacman -Q gimp && sudo pacman -Rs gimp
