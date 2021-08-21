@@ -11,11 +11,8 @@ echo "we've installed the gnu coreutils to your computer so that these scripts c
     sudo pacman -Rs coreutils"
 
 # install zsh and oh-my-zsh 
-# set environment variables so it doesn't do dumb things
-set RUNZSH=no
 sudo pacman -S zsh --needed 
-sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
-unset RUNZSH
+RUNZSH='no' sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 # chsh -s /bin/zsh  # uncomment this to automatically set shell to zsh
 echo "zsh is installed but it might not be your default shell yet, to set it to your default shell please run
     chsh -s /bin/zsh"
