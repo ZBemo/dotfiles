@@ -36,15 +36,15 @@ install mcomix
 install deluge deluge-gtk
 
 # fastfetch -- if you already have neofetch installed this script will use that instead
-pacman -Q neofetch || install fastfetch 
+pacman -Q neofetch 2&1> /dev/null || install fastfetch 
 
-pacman -Q neofetch && sudo ln -S /bin/neofetch /bin/flashfetch # this is just so I don't have to edit /home/user/.zshrc
+pacman -Q neofetch 2&1> /dev/null && sudo ln -S /bin/neofetch /bin/flashfetch # this is just so I don't have to edit /home/user/.zshrc
 
 # install ninja if you have cmake installed
-pacman -Q cmake && install ninja
+pacman -Q cmake 2&1> /dev/null && install ninja
 
 # remove nano because it's a horrible text editor and you're better off just using whatever graphical notepad comes preinstalled with your version of manjaro (or of course using neovim)
-pacman -Q nano && sudo pacman -Rs nano 
+pacman -Q nano 2&1> /dev/null && sudo pacman -Rs nano 
 
 # remove gimp because literally no one has ever though "yeah let me open up gimp real quick"
 # pacman -Q gimp && sudo pacman -Rs gimp
