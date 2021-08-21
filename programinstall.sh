@@ -7,7 +7,8 @@ set -e # exit on error maybe change this later
 
 sudo pacman -S curl --needed # for installing things duh
 sudo pacman -S coreutils --needed 
-# i'm not really a big fan of coreutils but I believe it's necessary for the ln command. if you don't want it you can just uninstall it afterwards with the command sudo pacman -Rs coreutils
+echo "we've installed the gnu coreutils to your computer so that these scripts can have access to certian necessary commands, however, if you don't see yourself using the them in the future, feel free to remove it with the command
+    sudo pacman -Rs coreutils"
 
 # install zsh and oh-my-zsh 
 sudo pacman -S zsh --needed 
