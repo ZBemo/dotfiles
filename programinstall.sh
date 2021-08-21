@@ -23,7 +23,7 @@ echo "zsh is installed but it might not be your default shell yet, to set it to 
     chsh -s /bin/zsh"
 
 # install neovim and necessary neovim plugins
-sudo pacman -S vim-runtime nvim python-pynvim --needed 
+sudo pacman -S vim-runtime neovim python-pynvim --needed 
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ 
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
