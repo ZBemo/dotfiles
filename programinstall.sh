@@ -17,15 +17,14 @@ echo "we've installed the gnu coreutils to your computer so that these scripts c
 
 # install zsh and oh-my-zsh 
 sudo pacman -S zsh --needed 
-RUNZSH='no' sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
+[ $ZSH ] || RUNZSH='no' sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 # chsh -s /bin/zsh  # uncomment this to automatically set shell to zsh
 echo "zsh is installed but it might not be your default shell yet, to set it to your default shell please run
     chsh -s /bin/zsh"
 
 # install neovim and necessary neovim plugins
 sudo pacman -S vim-runtime neovim python-pynvim --needed 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs \ 
-    https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # install vscodium / vscode -- we don't install plugins for you because I don't really care about vscode plugins enough to do that
 sudo pacman -S code --needed
