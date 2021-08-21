@@ -1,0 +1,1 @@
+the easiest way to get these files in the right place would probably be with mv -r ./home/user ~/ while logged into the account you want to configure 
