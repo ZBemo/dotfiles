@@ -5,6 +5,11 @@ set -e # exit on error maybe change this later
 # this assumes you're using manjaro linux with bash and pacman installed (which should be any unmodified manjaro installation), so you will have to update these commands
 # for other distributions
 
+# TODO: use this
+install() {
+    pacman -S --needed $@
+}
+
 sudo pacman -S curl --needed # for installing things duh
 sudo pacman -S coreutils --needed 
 echo "we've installed the gnu coreutils to your computer so that these scripts can have access to certian necessary commands, however, if you don't see yourself using the them in the future, feel free to remove it with the command
