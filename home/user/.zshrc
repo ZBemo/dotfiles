@@ -103,18 +103,12 @@ bindkey -v
 unsetopt beep
 
 # user added aliases
-alias syu='sudo pacman -Syu' # easy System Yide (get it?) Updates
+alias syu='pamac update && pamac upgrade' # easy System Yide (get it?) Updates
 
 # nvim ease of access 
 alias vimdiff='nvim -d'
 alias vim='nvim'
 alias vi='nvim'
-
-# user added exports
-# TODO: find better place to put this 
-export CMAKE_GENERATOR='Ninja'
-export VISUAL=nvim
-export EDITOR="$VISUAL"
 
 # manjaro built in extractor function ig this works
 ex ()
@@ -124,7 +118,7 @@ ex ()
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1   ;;
+      *.rar)       unrar x $1     ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
@@ -138,12 +132,6 @@ ex ()
     echo "'$1' is not a valid file"
   fi
 }
-
-# doesn't work
-# fork(){
-#     bg &&
-#     disown %1;
-# }
 
 # edit path
 export PATH="/home/zbemo/.deno/bin:$PATH"
