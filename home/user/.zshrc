@@ -103,7 +103,7 @@ bindkey -v
 unsetopt beep
 
 # user added aliases
-alias syu='pamac update && pamac upgrade' # easy System Yide (get it?) Updates
+alias syu='pamac upgrade' # easy System Yide (get it?) Updates
 
 # nvim ease of access 
 alias vimdiff='nvim -d'
