@@ -17,6 +17,8 @@ echo "we've installed the gnu coreutils to your computer so that these scripts c
 
 # install zsh and oh-my-zsh 
 install zsh 
+# check if omz is already installed with the $ZSH varible (TODO: make sure this is actually a omz thing), and then install omz in non-interactive mode 
+# look at the code that we're curling down for more info on how to customize the ohmyzsh install through environment variables
 [ $ZSH ] || RUNZSH='no' sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" 
 # chsh -s /bin/zsh  # uncomment this to automatically set shell to zsh
 echo "zsh is installed but it might not be your default shell yet, to set it to your default shell please run
