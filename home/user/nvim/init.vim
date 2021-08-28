@@ -47,6 +47,14 @@ call plug#begin('~/.nvim/vim_plug_folder')
     Plug 'google/vim-glaive'
     " CoC  -- useful for deno and others
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+
+    Plug 'Olical/conjure', {'tag': 'v4.23.0'} " clojure plugin make sure to check for releases later
+    
+    " Couldn't get this to work:
+    " make clojure plugin less of a pain in the *ss
+    "Plug 'tpope/vim-dispatch'
+    "Plug 'clojure-vim/vim-jack-in'
+    "Plug 'Radenling/vim-dispatch-neovim'
 call plug#end()
 
 call glaive#Install()
