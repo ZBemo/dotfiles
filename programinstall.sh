@@ -10,8 +10,9 @@ install() {
 }
 
 install curl # for installing things duh
-install coreutils  
-echo "we've installed the gnu coreutils to your computer so that these scripts can have access to certian necessary commands, however, if you don't see yourself using the them in the future, feel free to remove it with the command
+pacman -Q coreutils || install coreutils && \
+echo "we've installed the gnu coreutils to your computer so that these scripts can have access to certian tools they need 
+however, if you don't see yourself using the them in the future, feel free to remove them with the command
     sudo pacman -Rs coreutils"
 
 # install zsh and oh-my-zsh 
