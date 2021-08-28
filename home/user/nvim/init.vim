@@ -24,6 +24,8 @@ set noshowmode
 set splitright
 set splitbelow
 
+autocmd TermOpen * startinsert " automatically start terminals in insert mode because honestly that's the only mode you need to use them in
+
 filetype plugin indent on
 syntax enable
 colorscheme slate 
