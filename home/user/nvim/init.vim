@@ -26,7 +26,7 @@ set splitbelow
 
 filetype plugin indent on
 syntax enable
-colorscheme ron 
+colorscheme slate 
 
 " vim-plug setup
 call plug#begin('~/.nvim/vim_plug_folder')
