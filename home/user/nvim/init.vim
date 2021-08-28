@@ -1,3 +1,6 @@
+" TODO: split out into multiple files
+" at least a plugins.vim for Plug and a config.vim for stuff like set mouse=a
+
 set nocompatible
 set showmatch
 set ignorecase
@@ -6,17 +9,20 @@ set hlsearch
 set tabstop=4
 " set showtabline=4 " ugly as hell don't uncomment
 set expandtab
-set smarttab
 set smartindent
 set shiftwidth=4
 set autoindent
 set number
-set wildmode=longest,list
+set wildmode=longest,list " useable autocompletion
+set smarttab " Idek actually
 set conceallevel=0
 set laststatus=0
 set updatetime=300
 set autochdir
 set noshowmode
+" make windows split on side hopefully
+set splitright
+set splitbelow
 
 filetype plugin indent on
 syntax enable
@@ -39,7 +45,7 @@ call plug#begin('~/.nvim/vim_plug_folder')
     Plug 'google/vim-maktaba'
     Plug 'google/vim-codefmt'
     Plug 'google/vim-glaive'
-    " CoC 
+    " CoC  -- useful for deno and others
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
 call plug#end()
 
@@ -52,7 +58,7 @@ call glaive#Install()
 lua require'lspconfig'.rust_analyzer.setup({})
 lua require'gitsigns'.setup({})
 
-" copy-pasted from autofmt README
+" autofmt copy-paste
 augroup autoformat_settings
   autocmd FileType bzl AutoFormatBuffer buildifier
   autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
