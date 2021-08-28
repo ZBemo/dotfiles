@@ -137,4 +137,5 @@ ex ()
 export PATH="/home/zbemo/.deno/bin:$PATH"
 
 # cool little "greeter"
+echo ""; # newline so it's not pushed up against something
 flashfetch # fastfetch goes just as fast but better to be safe 
