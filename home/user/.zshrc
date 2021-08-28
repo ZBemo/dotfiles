@@ -102,6 +102,9 @@ source $ZSH/oh-my-zsh.sh
 bindkey -v
 unsetopt beep
 
+# user added aliases
+alias syu='pamac upgrade' # easy System Yide (get it?) Updates
+
 # nvim ease of access 
 alias vimdiff='nvim -d'
 alias vim='nvim'
