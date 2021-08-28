@@ -5,7 +5,6 @@ set -e # exit on error maybe change this later
 # this assumes you're using manjaro linux with bash and pacman installed (which should be any unmodified manjaro installation), so you will have to update these commands
 # for other distributions
 
-# TODO: use this
 install() {
     pacman -S -q --noconfirm --needed $@
 }
