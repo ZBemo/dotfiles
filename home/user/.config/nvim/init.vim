@@ -28,7 +28,7 @@ autocmd TermOpen * startinsert " automatically start terminals in insert mode be
 
 filetype plugin indent on
 syntax enable
-colorscheme slate 
+colorscheme ron 
 
 " vim-plug setup
 call plug#begin('~/.nvim/vim_plug_folder')
@@ -64,9 +64,15 @@ call glaive#Install()
 " more autofmt
 " Glaive codefmt plugin[mappings]
 
-" lsp setup  
+" lsp setup  and other
 lua require'lspconfig'.rust_analyzer.setup({})
 lua require'gitsigns'.setup({})
+
+" user-added functions 
+fu! NTerm() " a function that opens a new window with a terminal so it doesn't go over your current buffer
+    vsplit
+    terminal
+endfunction
 
 " autofmt copy-paste
 augroup autoformat_settings
