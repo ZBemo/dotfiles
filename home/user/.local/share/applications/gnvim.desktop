@@ -1,0 +1,7 @@
+[Desktop Entry]
+Version=0.1
+Type=Application
+Name=gnvim
+Exec=xfce4-terminal --hide-menubar --hide-scrollbar --hide-toolbar --fullscreen --icon=/usr/share/icons/hicolor/128x128/apps/nvim.png --dynamic-title-mode=replace -x /bin/nvim
+Icon=/usr/share/icons/hicolor/128x128/apps/nvim.png
+
