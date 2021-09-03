@@ -110,6 +110,8 @@ alias vimdiff='nvim -d'
 alias vim='nvim'
 alias vi='nvim'
 
+alias man='batman'
+
 # manjaro built in extractor function ig this works
 ex ()
 {

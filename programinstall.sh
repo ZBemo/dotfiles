@@ -9,6 +9,11 @@ install() {
     pacman -S -q --noconfirm --needed $@
 }
 
+# TODO: use this
+check() {
+    pacman -Q $@ 1&2>/dev/null
+}
+
 install curl # for installing things duh
 pacman -Q coreutils || install coreutils && \
 echo "we've installed the gnu coreutils to your computer so that these scripts can have access to certian tools they need 
@@ -36,6 +41,8 @@ install mcomix
 
 # install deluge -- another one liner
 install deluge deluge-gtk
+
+install bat # install bat, a cool cat 'alternative'
 
 # fastfetch -- if you already have neofetch installed this script will use that instead
 pacman -Q neofetch 2&1> /dev/null || install fastfetch 
