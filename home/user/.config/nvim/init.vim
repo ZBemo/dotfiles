@@ -1,6 +1,3 @@
-" TODO: split out into multiple files
-" at least a plugins.vim for Plug and a config.vim for stuff like set mouse=a
-
 set nocompatible
 set showmatch
 set ignorecase
@@ -28,7 +25,11 @@ autocmd TermOpen * startinsert " automatically start terminals in insert mode be
 
 filetype plugin indent on
 syntax enable
-colorscheme ron 
+if $TERM == "xterm-256color"
+    colorscheme ron
+elseif $TERM == "xterm-kitty"
+    colorscheme default
+endif
 
 " vim-plug setup
 call plug#begin('~/.nvim/vim_plug_folder')
