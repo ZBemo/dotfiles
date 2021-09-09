@@ -21,8 +21,6 @@ set noshowmode
 set splitright
 set splitbelow
 
-autocmd TermOpen * startinsert " automatically start terminals in insert mode because honestly that's the only mode you need to use them in
-
 filetype plugin indent on
 syntax enable
 if $TERM == "xterm-256color"
@@ -48,16 +46,15 @@ call plug#begin('~/.nvim/vim_plug_folder')
     Plug 'google/vim-maktaba'
     Plug 'google/vim-codefmt'
     Plug 'google/vim-glaive'
-    " CoC  -- useful for deno and others
+    " CoC  -- useful for deno 
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
+    " Plugin for Clojure
+    Plug 'Olical/conjure', {'tag': 'v4.23.0'}  
+    " allow use of commands like :Clj, :Lein, etc 
+    Plug 'tpope/vim-dispatch'
+    Plug 'Radenling/vim-dispatch-neovim'
+    Plug 'clojure-vim/vim-jack-in'
 
-    Plug 'Olical/conjure', {'tag': 'v4.23.0'} " clojure plugin make sure to check for releases later
-    
-    " Couldn't get this to work:
-    " make clojure plugin less of a pain in the *ss
-    "Plug 'tpope/vim-dispatch'
-    "Plug 'clojure-vim/vim-jack-in'
-    "Plug 'Radenling/vim-dispatch-neovim'
 call plug#end()
 
 call glaive#Install()
@@ -74,6 +71,12 @@ fu! NTerm() " a function that opens a new window with a terminal so it doesn't g
     vsplit
     terminal
 endfunction
+
+fu! CljSettings()
+    set tabstop=4
+endfunction
+
+autocmd FileType clojure call CljSettings() 
 
 " autofmt copy-paste
 augroup autoformat_settings
