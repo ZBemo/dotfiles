@@ -31,7 +31,8 @@ echo "zsh is installed but it might not be your default shell yet, to set it to 
 
 # install neovim and necessary neovim plugins
 install vim-runtime neovim python-pynvim 
-curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
+       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 # install vscodium / vscode -- we don't install plugins for you because I don't really care about vscode plugins enough to do that
 install code 
