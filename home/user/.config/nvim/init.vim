@@ -30,33 +30,34 @@ elseif $TERM == "xterm-kitty"
 endif
 
 " vim-plug setup
-call plug#begin(stdpath('data') . '/plugged')
-    " lsps (rust,deno,etc)
-    Plug 'neovim/nvim-lspconfig'
-    " better pairing
-    Plug 'jiangmiao/auto-pairs'
-    " better root directorys - not just the current folder
-    Plug 'airblade/vim-rooter'
-    " might be useless
-    Plug 'simrat39/rust-tools.nvim'
-    " git add_hunk
-    Plug 'nvim-lua/plenary.nvim'
-    Plug 'lewis6991/gitsigns.nvim'
-    " autofmt
-    Plug 'google/vim-maktaba'
-    Plug 'google/vim-codefmt'
-    Plug 'google/vim-glaive'
-    " CoC  -- useful for deno 
-    Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    " Plugin for Clojure
-    Plug 'Olical/conjure', {'tag': 'v4.23.0'}  
-    " allow use of commands like :Clj, :Lein, etc 
-    Plug 'tpope/vim-dispatch'
-    Plug 'Radenling/vim-dispatch-neovim'
-    Plug 'clojure-vim/vim-jack-in'
+call plug#begin('~/.nvim/vim_plug_folder')
+" lsps (rust,deno,etc)
+Plug 'neovim/nvim-lspconfig'
+" better pairing
+Plug 'jiangmiao/auto-pairs'
+" better root directorys - not just the current folder
+Plug 'airblade/vim-rooter'
+" might be useless
+Plug 'simrat39/rust-tools.nvim'
+" git add_hunk
+Plug 'nvim-lua/plenary.nvim'
+Plug 'lewis6991/gitsigns.nvim'
+" autofmt
+Plug 'google/vim-maktaba'
+Plug 'google/vim-codefmt'
+Plug 'google/vim-glaive'
+" CoC  -- useful for deno 
+Plug 'neoclide/coc.nvim', {'branch': 'release'}
+" Plugin for Clojure
+Plug 'Olical/conjure', {'tag': 'v4.23.0'}  
+" allow use of commands like :Clj, :Lein, etc 
+Plug 'tpope/vim-dispatch'
+Plug 'Radenling/vim-dispatch-neovim'
+Plug 'clojure-vim/vim-jack-in'
+" git tools
+Plug 'tpope/vim-fugitive'
 
 call plug#end()
-
 call glaive#Install()
 
 " more autofmt
@@ -80,15 +81,14 @@ autocmd FileType clojure call CljSettings()
 
 " autofmt copy-paste
 augroup autoformat_settings
-  autocmd FileType bzl AutoFormatBuffer buildifier
-  autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
-  autocmd FileType dart AutoFormatBuffer dartfmt
-  autocmd FileType go AutoFormatBuffer gofmt
-  autocmd FileType gn AutoFormatBuffer gn
-  autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-  autocmd FileType java AutoFormatBuffer google-java-format
-  autocmd FileType python AutoFormatBuffer yapf
-  " Alternative: autocmd FileType python AutoFormatBuffer autopep8
-  autocmd FileType rust AutoFormatBuffer rustfmt
-  autocmd FileType vue AutoFormatBuffer prettier
+    autocmd FileType bzl AutoFormatBuffer buildifier
+    autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
+    autocmd FileType dart AutoFormatBuffer dartfmt
+    autocmd FileType go AutoFormatBuffer gofmt
+    autocmd FileType gn AutoFormatBuffer gn
+    autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
+    autocmd FileType java AutoFormatBuffer google-java-format
+    autocmd FileType python AutoFormatBuffer yapf
+    autocmd FileType rust AutoFormatBuffer rustfmt
+    autocmd FileType vue AutoFormatBuffer prettier
 augroup END
