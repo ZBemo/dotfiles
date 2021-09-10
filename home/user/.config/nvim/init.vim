@@ -36,7 +36,7 @@ elseif $TERM == "xterm-kitty"
 endif
 
 " vim-plug setup
-call plug#begin('~/.nvim/vim_plug_folder')
+call plug#begin(stdpath('data') . '/plugged')
 " lsps (rust,deno,etc)
 Plug 'neovim/nvim-lspconfig'
 " better pairing
