@@ -21,10 +21,16 @@ set noshowmode
 set splitright
 set splitbelow
 
+let maplocalleader=","
+set timeoutlen=50000
+
+highlight NormalFloat ctermbg=black guibg=black
+
 filetype plugin indent on
+
 syntax enable
 if $TERM == "xterm-256color"
-    colorscheme ron
+    colorscheme slate
 elseif $TERM == "xterm-kitty"
     colorscheme default
 endif
@@ -60,9 +66,6 @@ Plug 'tpope/vim-fugitive'
 call plug#end()
 call glaive#Install()
 
-" more autofmt
-" Glaive codefmt plugin[mappings]
-
 " lsp setup  and other
 lua require'lspconfig'.rust_analyzer.setup({})
 lua require'gitsigns'.setup({})
@@ -71,6 +74,12 @@ lua require'gitsigns'.setup({})
 fu! NTerm() " a function that opens a new window with a terminal so it doesn't go over your current buffer
     vsplit
     terminal
+endfunction
+
+fu! CleanIndentation()
+    let &l:current_pos = normal=line(".")
+    normal gg=G
+    goto &l:current_pos
 endfunction
 
 fu! CljSettings()
