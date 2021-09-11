@@ -2,7 +2,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/home/zbemo/.oh-my-zsh"
+export ZSH="`realpath ~`/.oh-my-zsh"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time oh-my-zsh is loaded, in which case,
@@ -136,7 +136,7 @@ ex ()
 }
 
 # edit path
-export PATH="/home/zbemo/.deno/bin:$PATH"
+export PATH="$(realpath ~/.deno/bin):$PATH"
 
 # cool little "greeter"
 echo ""; # newline so it's not pushed up against something
