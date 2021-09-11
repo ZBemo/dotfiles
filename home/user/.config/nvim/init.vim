@@ -57,8 +57,7 @@ Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plugin for Clojure
 Plug 'Olical/conjure', {'tag': 'v4.23.0'}  
 " allow use of commands like :Clj, :Lein, etc 
-Plug 'tpope/vim-dispatch'
-Plug 'Radenling/vim-dispatch-neovim'
+Plug 'tpope/vim-dispatch' | Plug 'Radenling/vim-dispatch-neovim'
 Plug 'clojure-vim/vim-jack-in'
 " git tools
 Plug 'tpope/vim-fugitive'
