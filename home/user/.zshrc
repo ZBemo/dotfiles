@@ -76,7 +76,7 @@ COMPLETION_WAITING_DOTS="true"
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+plugins=(git fancy-ctrl-z)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -107,10 +107,8 @@ alias syu='pamac upgrade' # easy System Yide (get it?) Updates
 
 # nvim ease of access 
 alias vimdiff='nvim -d'
-alias vim='nvim'
-alias vi='nvim'
-
-alias man='batman'
+# pretty, colored man pages
+alias man='batman' 
 
 # manjaro built in extractor function ig this works
 ex ()
@@ -120,7 +118,7 @@ ex ()
       *.tar.bz2)   tar xjf $1   ;;
       *.tar.gz)    tar xzf $1   ;;
       *.bz2)       bunzip2 $1   ;;
-      *.rar)       unrar x $1     ;;
+      *.rar)       unrar x $1   ;;
       *.gz)        gunzip $1    ;;
       *.tar)       tar xf $1    ;;
       *.tbz2)      tar xjf $1   ;;
