@@ -76,9 +76,7 @@ fu! NTerm() " a function that opens a new window with a terminal so it doesn't g
 endfunction
 
 fu! CleanIndentation()
-    let &l:current_pos = normal=line(".")
-    normal gg=G
-    goto &l:current_pos
+    normal! gg=G
 endfunction
 
 fu! CljSettings()
