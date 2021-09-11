@@ -22,7 +22,7 @@ set splitright
 set splitbelow
 
 let maplocalleader=","
-set timeoutlen=50000
+set timeoutlen=50000 " TODO: figure out if this is necesarry
 
 highlight NormalFloat ctermbg=black guibg=black
 
@@ -43,15 +43,11 @@ Plug 'neovim/nvim-lspconfig'
 Plug 'jiangmiao/auto-pairs'
 " better root directorys - not just the current folder
 Plug 'airblade/vim-rooter'
-" might be useless
-Plug 'simrat39/rust-tools.nvim'
-" git add_hunk
-Plug 'nvim-lua/plenary.nvim'
-Plug 'lewis6991/gitsigns.nvim'
+" git stuff 
+Plug 'tpope/vim-fugitive'
+Plug 'nvim-lua/plenary.nvim' | Plug 'lewis6991/gitsigns.nvim'
 " autofmt
-Plug 'google/vim-maktaba'
-Plug 'google/vim-codefmt'
-Plug 'google/vim-glaive'
+Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt' | Plug 'google/vim-glaive' 
 " CoC  -- useful for deno 
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plugin for Clojure
