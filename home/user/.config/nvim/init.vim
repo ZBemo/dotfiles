@@ -59,15 +59,19 @@ Plug 'Olical/conjure', {'tag': 'v4.23.0'}
 " allow use of commands like :Clj, :Lein, etc 
 Plug 'tpope/vim-dispatch' | Plug 'Radenling/vim-dispatch-neovim'
 Plug 'clojure-vim/vim-jack-in'
-" git tools
-Plug 'tpope/vim-fugitive'
-
+" smoother pgup and pgdown - maybe not worth it
+Plug 'psliwka/vim-smoothie'
+" tweaked file browsing
+Plug 'tpope/vim-vinegar'
+" better autocompletions
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 call plug#end()
 call glaive#Install()
 
 " lsp setup  and other
 lua require'lspconfig'.rust_analyzer.setup({})
 lua require'gitsigns'.setup({})
+let g:deoplete#enable_at_startup = 1
 
 " user-added functions 
 fu! NTerm() " a function that opens a new window with a terminal so it doesn't go over your current buffer
