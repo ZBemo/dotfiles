@@ -135,6 +135,11 @@ ex ()
   fi
 }
 
+nvmopen ()
+{
+DIR=dirname $1; cd $DIR && nvim $1
+}
+
 # edit path
 export PATH="$(realpath ~/.deno/bin):$PATH"
 
