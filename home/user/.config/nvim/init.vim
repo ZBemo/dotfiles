@@ -38,7 +38,7 @@ elseif $TERM == "xterm-kitty"
     colorscheme default
 endif
 
-" vim-plug setup
+" install plugins here
 call plug#begin(stdpath('data') . '/plugged')
 " lsps (rust,deno,etc)
 Plug 'neovim/nvim-lspconfig'
@@ -70,7 +70,10 @@ call glaive#Install()
 " lsp setup  and other
 lua require'lspconfig'.rust_analyzer.setup({})
 lua require'gitsigns'.setup({})
+
 let g:deoplete#enable_at_startup = 1
+call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'})
+set completeopt-=preview 
 
 " user-added functions 
 fu! NTerm() " a function that opens a new window with a terminal so it doesn't go over your current buffer
