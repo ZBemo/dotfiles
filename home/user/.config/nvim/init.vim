@@ -24,6 +24,8 @@ set splitbelow
 let maplocalleader=","
 set timeoutlen=50000 " TODO: figure out if this is necesarry
 
+map tl "_dd
+
 highlight NormalFloat ctermbg=black guibg=black
 
 filetype plugin indent on
