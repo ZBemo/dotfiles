@@ -54,7 +54,7 @@ Plug 'tpope/vim-fugitive'
 Plug 'nvim-lua/plenary.nvim' | Plug 'lewis6991/gitsigns.nvim'
 " autofmt
 Plug 'google/vim-maktaba' | Plug 'google/vim-codefmt' | Plug 'google/vim-glaive' 
-" CoC  -- useful for deno 
+" CoC  -- useful for deno and typescript, there's probably a better way tho
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 " Plugin for Clojure
 Plug 'Olical/conjure', {'tag': 'v4.23.0'}  
@@ -90,13 +90,13 @@ autocmd FileType clojure call CljSettings()
 
 " autofmt copy-paste
 augroup autoformat_settings
-    autocmd FileType bzl AutoFormatBuffer buildifier
+    " autocmd FileType bzl AutoFormatBuffer buildifier
     autocmd FileType c,cpp,proto,javascript,arduino AutoFormatBuffer clang-format
     autocmd FileType dart AutoFormatBuffer dartfmt
-    autocmd FileType go AutoFormatBuffer gofmt
-    autocmd FileType gn AutoFormatBuffer gn
+    " autocmd FileType go AutoFormatBuffer gofmt
+    " autocmd FileType gn AutoFormatBuffer gn
     autocmd FileType html,css,sass,scss,less,json AutoFormatBuffer js-beautify
-    autocmd FileType java AutoFormatBuffer google-java-format
+    " autocmd FileType java AutoFormatBuffer google-java-format
     autocmd FileType python AutoFormatBuffer yapf
     autocmd FileType rust AutoFormatBuffer rustfmt
     autocmd FileType vue AutoFormatBuffer prettier
