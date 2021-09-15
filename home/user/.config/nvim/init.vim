@@ -78,12 +78,6 @@ let g:deoplete#enable_at_startup = 1
 call deoplete#custom#option('keyword_patterns', {'clojure': '[\w!$%&*+/:<=>?@\^_~\-\.#]*'})
 set completeopt-=preview 
 
-" user-added functions 
-fu! NTerm() " a function that opens a new window with a terminal so it doesn't go over your current buffer
-    vsplit
-    terminal
-endfunction
-
 fu! CleanIndentation()
     normal! gg=G
 endfunction
