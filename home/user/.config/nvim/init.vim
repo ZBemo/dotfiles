@@ -10,7 +10,7 @@ set smartindent
 set shiftwidth=4
 set autoindent
 set number
-set wildmode=longest,list " useable autocompletion
+set wildmode=list:longest " useable autocompletion
 set smarttab " Idek actually
 set conceallevel=0
 set laststatus=0
@@ -21,7 +21,7 @@ set noshowmode
 set splitright
 set splitbelow
 
-set termguicolors " more 'correct' colors
+set termguicolors " more correct colors
 set inccommand=nosplit
 
 let maplocalleader=","
