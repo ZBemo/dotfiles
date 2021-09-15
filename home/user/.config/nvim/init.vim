@@ -21,6 +21,9 @@ set noshowmode
 set splitright
 set splitbelow
 
+set termguicolors " more 'correct' colors
+set inccommand=nosplit
+
 let maplocalleader=","
 set timeoutlen=50000 " TODO: figure out if this is necesarry
 
