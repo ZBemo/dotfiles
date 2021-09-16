@@ -27,8 +27,9 @@ set inccommand=nosplit
 let maplocalleader=","
 set timeoutlen=50000 " TODO: figure out if this is necesarry
 
-map t "_d
-map tt "_dd
+nnoremap t "_d
+nnoremap tt "_dd
+vnoremap t "_x
 
 highlight NormalFloat ctermbg=black guibg=black
 
