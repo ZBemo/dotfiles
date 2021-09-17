@@ -133,9 +133,8 @@ ex ()
   fi
 }
 
-nvmopen ()
-{
-DIR=dirname $1; cd $DIR && nvim $1
+nopen(){ 
+    cd $1 && nvim . ${@:2}
 }
 
 # edit path
