@@ -14,6 +14,13 @@ check() {
     pacman -Q $@ 1&2>/dev/null
 }
 
+if ! $STAYBRANCH ; do
+  echo "Changing your manjaro branch to testing, if you don't wish to change the branch please ctrl+c now and run again with \$STAYBRANCH set to 1"
+  pacman-mirrors --api --set-branch testing && \
+    pamcan-mirrors --fasttrack 5 && pacman -Syyu
+
+fi
+
 install curl # for installing things duh
 pacman -Q coreutils || install coreutils && \
 echo "we've installed the gnu coreutils to your computer so that these scripts can have access to certian tools they need 
