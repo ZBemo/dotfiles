@@ -14,6 +14,30 @@ check() {
     pacman -Q $@ 1&2>/dev/null
 }
 
+maybe_npmprefix(){
+    local npmrc_realpath="`realpath ~/.npmrc`"
+    [[ -f "$npmrc_realpath" ]] && source "$npmrc_realpath"
+    echo $prefix
+}
+
+lunarvim(){
+  echo "installing lunarvim, a neovim config to make it more like an ide. 
+It requires the use of a nerdfont, which you can find at https://www.nerdfonts.com/
+If you load lvim and don't see any issues, you probably already have a nerdfont installed and set up (for example, manjaro kde comes with a nerdfont)"
+
+    install nodejs npm python-pip rust
+
+    local NPMPREFIX=`maybe_npmprefix`
+    if ! [[ $NPMPREFIX ]]; then
+      echo "setting your npm global install prefix to $NPMPREFIX in order to fix EACCESS errors, if you're running a multiple-account machine this may cause unexpected behavior"
+      NPMPREFIX="~/.npm-global" 
+    fi
+
+    npm config set prefix "$NPMPREFIX"
+
+    LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
+  }
+
 if ! $STAYBRANCH ; do
   echo "Changing your manjaro branch to testing, if you don't wish to change the branch please ctrl+c now and run again with \$STAYBRANCH set to 1"
   pacman-mirrors --api --set-branch testing && \
@@ -41,8 +65,8 @@ install vim-runtime neovim python-pynvim
 sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
        https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
-# install vscodium / vscode -- we don't install plugins for you because I don't really care about vscode plugins enough to do that
-install code 
+[[ $NOLVIM ]] || \
+  lunarvim() # install lunarvim and its dependencies, you'll have to find a nerd font
 
 # install mcomix -- it works without any "plugins"
 install mcomix 
