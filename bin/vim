@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+if [[ -x `which  lvim | head` ]]; 
+do 
+  lvim $@
+else 
+  nvim $@
+fi
