@@ -1,8 +1,9 @@
 #!/bin/zsh
+## works with !/bin/bash if you prefer that
 
-if [[ -x `which  lvim | head` ]]; 
-do 
+if [[ -x `which  lvim | head` ]];
+do
   lvim $@
-else 
+else
   nvim $@
 fi
