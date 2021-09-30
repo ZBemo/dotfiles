@@ -1,0 +1,9 @@
+[user]
+	email = zachmpetti@gmail.com
+	name = Zachary Petti
+[core]
+	editor = lvim 
+[diff]
+	tool = nvimdiff
+[difftool "nvimdiff"]
+	cmd = lvim -d $LOCAL $REMOTE
