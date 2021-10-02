@@ -41,7 +41,7 @@ If you load lvim and don't see any issues, you probably already have a nerdfont 
 if ! $STAYBRANCH ; do
   echo "Changing your manjaro branch to testing, if you don't wish to change the branch please ctrl+c now and run again with \$STAYBRANCH set to 1"
   pacman-mirrors --api --set-branch testing && \
-    pamcan-mirrors --fasttrack 5 && pacman -Syyu
+    pamcan-mirrors --fasttrack && pacman -Syyu # Could be Syyuu if we want to get rid of the annoying message
 
 fi
 
