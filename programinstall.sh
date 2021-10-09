@@ -38,7 +38,7 @@ If you load lvim and don't see any issues, you probably already have a nerdfont 
     LVBRANCH=rolling bash <(curl -s https://raw.githubusercontent.com/lunarvim/lunarvim/rolling/utils/installer/install.sh)
   }
 
-if ! $STAYBRANCH ; do
+if ! $STAYBRANCH ; then
   echo "Changing your manjaro branch to testing, if you don't wish to change the branch please ctrl+c now and run again with \$STAYBRANCH set to 1"
   pacman-mirrors --api --set-branch testing && \
     pamcan-mirrors --fasttrack && pacman -Syyu # Could be Syyuu if we want to get rid of the annoying message

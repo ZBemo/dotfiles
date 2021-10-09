@@ -1,4 +1,6 @@
 WARNING: I haven't tested any of the scripts and dotfiles on a fresh manjaro install yet, so it might not work completely
+at the moment, I would recommend looking over the various files and choosing things that work for you from them
 
 Notices:
  - In /home/user/.config/deluge/ there are multiple references to /home/zbemo which would not be the correct location for anyone who isn't me. You can either change that yourself, or just not use the deluge config files, as they're barely changed from fresh-install settings
+
