@@ -62,8 +62,6 @@ echo "zsh is installed but it might not be your default shell yet, to set it to 
 
 # install neovim and necessary neovim plugins
 install vim-runtime neovim python-pynvim 
-sh -c 'curl -fLo "${XDG_DATA_HOME:-$HOME/.local/share}"/nvim/site/autoload/plug.vim --create-dirs \
-       https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim'
 
 [[ $NOLVIM ]] || \
   lunarvim() # install lunarvim and its dependencies, you'll have to find a nerd font
