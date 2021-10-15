@@ -8,7 +8,8 @@ vim.cmd('let maplocalleader=","')
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["t"] = "\"_d"
-lvim.keys.normal_mode["T"] = "\"_dd"
+-- lvim.keys.normal_mode["T"] = "\"_dd"
+lvim.keys.normal_mode["tt"] = "\"_dd"
 lvim.keys.visual_mode["t"] = "\"_x"
 
 lvim.builtin.dashboard.active = true
@@ -43,7 +44,7 @@ lvim.plugins = {
         hide_cursor = false,          -- Hide cursor while scrolling
         stop_eof = true,             -- Stop at <EOF> when scrolling downwards
         use_local_scrolloff = false, -- Use the local scope of scrolloff instead of the global scope
-        respect_scrolloff = true,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
+        respect_scrolloff = false,   -- Stop scrolling when the cursor reaches the scrolloff margin of the file
         cursor_scrolls_alone = true, -- The cursor will keep on scrolling even if the window cannot scroll further
         easing_function = nil,        -- Default easing function
         pre_hook = nil,              -- Function to run before the scrolling animation starts
@@ -71,7 +72,7 @@ lvim.lang.rust.formatters = { { exe = "rustfmt" } }
 
 vim.opt.history = 500
 vim.opt.wildmode = { "list", "longest" }
-vim.opt.cmdheight = 1 -- 2 is too high and it looks really ugly
+vim.opt.cmdheight = 1
 vim.opt.swapfile = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff  = 15
