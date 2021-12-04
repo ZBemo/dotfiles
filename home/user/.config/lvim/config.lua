@@ -1,38 +1,49 @@
--- general
+﻿-- general
 lvim.log.level = "warn"
 lvim.format_on_save = true
 lvim.colorscheme = "onedarker"
 
 lvim.leader = "space"
-vim.cmd('let maplocalleader=","') 
 lvim.keys.normal_mode["<C-s>"] = ":w<cr>"
 
 lvim.keys.normal_mode["t"] = "\"_d"
--- lvim.keys.normal_mode["T"] = "\"_dd"
 lvim.keys.normal_mode["tt"] = "\"_dd"
 lvim.keys.visual_mode["t"] = "\"_x"
+-- don't make jj,jk,kj escape to normal mode
+lvim.keys.insert_mode["jj"] = "jj"
+lvim.keys.insert_mode["jk"] = "jk"
+lvim.keys.insert_mode["kj"] = "kj"
 
 lvim.builtin.dashboard.active = true
 lvim.builtin.terminal.active = true
-lvim.builtin.nvimtree.side = "left"
-lvim.builtin.nvimtree.show_icons.git = 0
+-- TODO: set these somewhere
+-- lvim.builtin.nvimtree.side = "left"
+-- lvim.builtin.nvimtree.show_icons.git = 0
+-- lvim.builtin.nvimtree.hide_dotfiles = 0
 
-lvim.builtin.treesitter.ensure_installed = { "rust", "clojure", "lua" } -- change back to "mantained" if things stop working
-lvim.builtin.treesitter.ignore_install = { "haskell" }
+lvim.builtin.treesitter.ensure_installed = { "rust", "clojure", "lua", "bash", "c" } -- change back to "mantained" if things stop working
+-- lvim.builtin.treesitter.ignore_install = { "haskell" }
 lvim.builtin.treesitter.highlight.enabled = true
 
 lvim.line_wrap_cursor_movement = false
 
 lvim.plugins = {
+  -- {
+  --   'glacambre/firenvim',
+  --   run = function() vim.fn['firenvim#install'](0) end
+  -- },
+  -- {
+  --   "~/Sources/tours/porth/editor/porth.vim"
+  -- },
   {
     "Olical/conjure",
-    tag = "v4.23.0",
     requires = {
       -- "tpope/vim-dispatch",
       "radenling/vim-dispatch-neovim",
       "clojure-vim/vim-jack-in"
     }
   },
+
   {
     "karb94/neoscroll.nvim",
     event = "WinScrolled",
@@ -68,11 +79,11 @@ lvim.plugins = {
 --   vim.opt.relativenumber = false
 -- end
 
-lvim.lang.rust.formatters = { { exe = "rustfmt" } }
-
 vim.opt.history = 500
-vim.opt.wildmode = { "list", "longest" }
 vim.opt.cmdheight = 1
 vim.opt.swapfile = true
 vim.opt.relativenumber = true
 vim.opt.scrolloff  = 15
+vim.opt.colorcolumn = "120"
+-- vim.opt.bomb = true
+-- vim.opt.fileencoding = "utf8"
